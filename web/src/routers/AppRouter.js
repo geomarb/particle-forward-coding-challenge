@@ -16,7 +16,9 @@ export default function AppRouter({ state }) {
         <Route path="/" exact>
           <HomePage state={state} setPhotoState={setPhotoState} />
         </Route>
-        <Route component={NotFoundPage} />
+        <Route>
+          <NotFoundPage showHeader />
+        </Route>
       </Switch>
     </BrowserRouter>
   );
