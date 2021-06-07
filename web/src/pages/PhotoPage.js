@@ -22,7 +22,7 @@ export default function PhotoPage({ uri: state }) {
   const [isLoading, setLoading] = React.useState(true);
 
   if (!state || !state.uri) {
-    return <NotFoundPage message="Invalid operation" />;
+    return <NotFoundPage message="Invalid operation" showHeader />;
   }
 
   const { uri, title = "" } = state;
