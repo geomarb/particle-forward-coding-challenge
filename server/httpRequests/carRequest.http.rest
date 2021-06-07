@@ -1,0 +1,9 @@
+@baseURL = {{$dotenv HOSTNAME}}:{{$dotenv PORT}}
+@contentType = application/json
+
+
+###
+GET {{baseURL}}/
+Content-Type: {{contentType}}
+origin: {{baseURL}}
+Content-Type: {{contentType}}

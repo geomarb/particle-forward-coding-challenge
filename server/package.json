@@ -1,0 +1,38 @@
+{
+  "name": "particle-challenge-js-server",
+  "version": "0.0.1",
+  "description": "Rest API - JavaScript",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "particle-challenge"
+  },
+  "keywords": [
+    "Rest",
+    "API",
+    "Particle",
+    "Challenge",
+    "Car",
+    "Booking"
+  ],
+  "author": "Geomar Bastiani",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "morgan": "^1.10.0",
+    "winston": "^3.3.3"
+  },
+  "devDependencies": {
+    "dotenv": "^10.0.0",
+    "eslint": "^7.27.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-prettier": "^3.4.0",
+    "nodemon": "^2.0.7",
+    "prettier": "^2.3.0",
+  }
+}
