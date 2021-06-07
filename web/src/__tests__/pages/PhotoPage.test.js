@@ -30,8 +30,8 @@ describe("Photo Page", () => {
   test("renders Photo Page without props", () => {
     render(<PhotoPage />);
 
-    expect(screen.queryByTestId("header")).toBeNull();
-    expect(screen.queryByTestId("header-text")).toBeNull();
+    expect(screen.getByTestId("header")).toBeInTheDocument();
+    expect(screen.getByTestId("header-text")).toBeInTheDocument();
     expect(screen.getByTestId("alert")).toBeInTheDocument();
     expect(screen.getByTestId("alert")).toHaveTextContent(alertMessage);
     expect(screen.getByTestId("alert-title")).toBeInTheDocument();
