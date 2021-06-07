@@ -1,9 +1,6 @@
 # Particle Forward Coding Challenge
 
-This project was a code challenge proposed from Particle Forward
-
-It consists of a web app and its car that shows a single car with thumbnails
-and a larger photo size that is showed by clicking in the thumbnails
+It is a responsive web app and a server that shows a single car with some thumbnails. When you click in the thumbnail it opens a larger photo.
 
 # Server API (REST)
 
@@ -85,6 +82,6 @@ Here you will find the PDF with the proposed challenge.
 
 ### In the wireframe there are some details from thumbnails, the ones in left side. More information is needed to implement it.
 
-### In the wireframe there are some details in the title saparete "/". More information is needed to implement it.
+### In the wireframe there are some details in the title separate "/". More information is needed to implement it.
 
 ### The JSON file has much more information than what was need, and there is no request about extra data it was cut in the server side. In this way the frontend will have access to just what it needs. In this way we avoid unnecessary data traffic.
