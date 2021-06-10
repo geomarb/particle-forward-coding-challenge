@@ -1,6 +1,5 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
-import { useHistory } from "react-router-dom";
 import Typography from "@material-ui/core/Typography";
 import Box from "@material-ui/core/Box";
 import Grid from "@material-ui/core/Grid";
@@ -8,7 +7,8 @@ import Paper from "@material-ui/core/Paper";
 import Skeleton from "@material-ui/lab/Skeleton";
 import CloseIcon from "@material-ui/icons/Close";
 import CardMedia from "@material-ui/core/CardMedia";
-import NotFoundPage from "./NotFoundPage";
+import Header from "../components/Header";
+import Alert from "../components/Alert";
 
 const useStyles = makeStyles(() => ({
   hide: {
@@ -16,16 +16,23 @@ const useStyles = makeStyles(() => ({
   },
 }));
 
-export default function PhotoPage({ uri: state }) {
-  const history = useHistory();
+export default function PhotoPage({ location, history }) {
   const classes = useStyles();
   const [isLoading, setLoading] = React.useState(true);
 
-  if (!state || !state.uri) {
-    return <NotFoundPage message="Invalid operation" showHeader />;
+  if (!location || !location.state) {
+    return (
+      <>
+        <Header />
+        <Alert
+          title="Fail loading photo"
+          message="It is missing params. Make sure your accessing it from our Home Page"
+        />
+      </>
+    );
   }
 
-  const { uri, title = "" } = state;
+  const { uri, title } = location.state;
 
   function handleClose() {
     return history.goBack();

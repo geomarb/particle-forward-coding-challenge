@@ -19,21 +19,16 @@ const useStyles = makeStyles({
   },
 });
 
-export default function ListItem({ uri, title = "", setPhotoState }) {
+export default function ListItem({ state }) {
   const classes = useStyles();
   const history = useHistory();
   const [isLoading, setLoading] = React.useState(true);
 
-  if (!uri || !setPhotoState) {
-    return <Alert title="Loading thumbnail image fail" />;
-  }
-
   function handleClick() {
-    setPhotoState({ uri, title });
-    return history.push("/photo");
+    return history.push({ pathname: "/photo", state });
   }
 
-  return (
+  return state && state.uri ? (
     <Grid item xs={12} sm={6} md={4} onClick={handleClick}>
       {isLoading && (
         <Skeleton
@@ -46,12 +41,14 @@ export default function ListItem({ uri, title = "", setPhotoState }) {
         className={isLoading ? classes.hide : classes.thumbnail}
         p={5}
         component="img"
-        image={`${uri}_2.jpg`}
-        title={title}
-        alt={title}
+        image={`${state.uri}_2.jpg`}
+        title={state.title}
+        alt={state.title}
         onLoad={() => setLoading(false)}
         data-testid="thumbnail-item"
       />
     </Grid>
+  ) : (
+    <Alert title="Loading thumbnail image fail" />
   );
 }

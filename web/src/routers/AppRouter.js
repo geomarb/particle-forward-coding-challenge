@@ -4,21 +4,13 @@ import HomePage from "../pages/HomePage";
 import PhotoPage from "../pages/PhotoPage";
 import NotFoundPage from "../pages/NotFoundPage";
 
-export default function AppRouter({ state }) {
-  const [photoState, setPhotoState] = React.useState({});
-
+export default function AppRouter() {
   return (
     <BrowserRouter>
       <Switch>
-        <Route path="/photo" exact>
-          <PhotoPage uri={photoState} />
-        </Route>
-        <Route path="/" exact>
-          <HomePage state={state} setPhotoState={setPhotoState} />
-        </Route>
-        <Route>
-          <NotFoundPage showHeader />
-        </Route>
+        <Route path="/" component={HomePage} exact />
+        <Route path="/photo" component={PhotoPage} exact />
+        <Route component={NotFoundPage} />
       </Switch>
     </BrowserRouter>
   );

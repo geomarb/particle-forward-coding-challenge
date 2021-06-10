@@ -7,22 +7,27 @@
   "modelKey": "246",
   "images": [
     {
+      "id": "1",
       "uri": "https://particleforward.com/api/challenge/assets/image1",
       "set": "fe4cfedffdffffffff"
     },
     {
+      "id": "1",
       "uri": "https://particleforward.com/api/challenge/assets/image1",
       "set": "fe4cfedffdffffffff"
     },
     {
+      "id": "2",
       "uri": "https://particleforward.com/api/challenge/assets/image2",
       "set": "fe4cfedffdffffffff"
     },
     {
+      "id": "3",
       "uri": "https://particleforward.com/api/challenge/assets/image3",
       "set": "fe4cfedffdffffffff"
     },
     {
+      "id": "4",
       "uri": "https://particleforward.com/api/challenge/assets/image4",
       "set": "fe4cfedffdffffffff"
     }

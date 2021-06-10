@@ -5,10 +5,7 @@ import Button from "@material-ui/core/Button";
 
 import Alert from "../components/Alert";
 
-export default function NotFoundPage({
-  showHeader,
-  message = "The page you are trying to access does not exists. Please go to our home page.",
-}) {
+export default function NotFoundPage() {
   const history = useHistory();
 
   return (
@@ -16,8 +13,8 @@ export default function NotFoundPage({
       <Alert
         severity="warning"
         title="Page not found!"
-        message={message}
-        showHeader={showHeader}
+        message="The page you are trying to access does not exists. Please go to our home page."
+        showHeader
       />
       <Box mt={5}>
         <Button
