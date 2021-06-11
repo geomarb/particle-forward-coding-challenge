@@ -23,6 +23,7 @@ function checkBrackets(str) {
       bracketStack.pop();
     }
   }
+
   return bracketStack.length === 0;
 }
 
@@ -31,9 +32,9 @@ function checkList() {
 
   for (let i = 0; i < checkItems.length; i++) {
     console.log(
-      `"${checkItems[i]}" is ${
-        checkBrackets(checkItems[i]) ? "" : "not "
-      }balanced`
+      `"${checkItems[i]}" is${
+        checkBrackets(checkItems[i]) ? "" : "not"
+      } balanced`
     );
   }
 }
