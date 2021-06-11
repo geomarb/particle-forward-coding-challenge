@@ -8,7 +8,7 @@ function checkBrackets(str) {
 
     if (openBrackets.includes(char)) {
       bracketStack.push(char);
-    } else {
+    } else if (closeBrackets.includes(char)) {
       if (bracketStack.length === 0) {
         return false;
       }
@@ -28,13 +28,11 @@ function checkBrackets(str) {
 }
 
 function checkList() {
-  const checkItems = ["{[[()]]}", "[()][)]", "{[[]()]]", "{[[]()]}", "[(])"];
+  const checkItems = ["[]", "[)", "[(2){a}]", "[(2{a}]"];
 
   for (let i = 0; i < checkItems.length; i++) {
     console.log(
-      `"${checkItems[i]}" is${
-        checkBrackets(checkItems[i]) ? "" : "not"
-      } balanced`
+      ` ${checkBrackets(checkItems[i]) ? "✅" : "❌"} "${checkItems[i]}"`
     );
   }
 }
